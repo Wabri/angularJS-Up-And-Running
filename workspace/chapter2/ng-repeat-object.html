@@ -1,0 +1,57 @@
+<!-- File: chapter2/ng-repeat-object.html -->
+<html ng-app="notesApp">
+	<head>
+		<title>Notes App</title>
+		<style type="text/css">
+			.done{
+				background-color: green;
+			}
+			.pending {
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body ng-controller="MainCtrl as ctrl">
+		<div ng-repeat="(author, note) in ctrl.notes"
+			ng-class="ctrl.getNoteClass(note.done)">
+			<span class="label" 
+				ng-bind="note.label">
+			</span>
+			<span class="author" 
+				ng-bind="author">
+			</span>
+		</div>
+		<script 
+			src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+		</script>
+		<script type="text/javascript">
+			angular.module('notesApp',[]).controller('MainCtrl',[
+				function() {
+					var self = this;
+					self.notes = {
+							tizio: {
+								id: 1,
+								label: 'First Note',
+								done: false
+							},
+							caio: {
+								id: 2,
+								label: 'Second Note',
+								done: true
+							},
+							sempronio: {
+								id:3,
+								label: 'Third Note',
+								done: false
+							}
+					};
+					self.getNoteClass = function(status){
+						return {
+							pending: !status,
+							done: status
+						};
+					};
+			}]);
+		</script>
+	</body>
+</html>
