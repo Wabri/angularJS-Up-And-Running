@@ -10,7 +10,7 @@
             <input type="submit" value="Submit" ng-click="ctrl.done()">
             <input type="reset" value="Reset" ng-click="ctrl.reset()">
         </form>
-        {{ctrl.isDone}}
+        The user {{ctrl.user.username}} is set? {{ctrl.isDone}}
         <!--  AngularJS  -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script type="text/javascript">
@@ -26,6 +26,8 @@
                   };
                   self.reset = function () {
                       self.isDone = false;
+                      self.user.username = '';
+                      self.user.password = '';
                   };
               }]);
         </script>
