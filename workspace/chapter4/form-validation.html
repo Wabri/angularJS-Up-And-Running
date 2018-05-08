@@ -4,7 +4,7 @@
         <title>Notes App</title>
     </head>
     <body ng-controller="MainCtrl as ctrl">
-        <form>
+        <form ng-submit="ctrl.submit()" name="myForm">
             <input
                 type="text"
                 ng-model="ctrl.user.username"
