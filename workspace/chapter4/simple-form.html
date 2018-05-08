@@ -17,6 +17,7 @@
             angular.module('NotesApp', []).controller('MainCtrl', [
               function () {
                   var self = this;
+                  self.user = {};
                   self.isDone = false;
                   self.submit = function () {
                       console.log('User clicked submit with ', self.username);
