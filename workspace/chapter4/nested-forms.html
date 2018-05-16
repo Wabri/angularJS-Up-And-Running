@@ -22,8 +22,8 @@
 
         .password.ng-pristine {
             background-color: beige;
-        }      
-        
+        }
+
         .password.ng-valid {
             background-color: mediumaquamarine;
         }
@@ -61,20 +61,31 @@
             />
             <input type="password" class="password" name="pwd" ng-model="ctrl.user.password" placeholder="Password" required />
         </div>
-
+        <br/>
         <ng-form name="profile">
+
             <input type="text" name="firstName" class="profileRequired" ng-model="ctrl.user.profile.firstName" placeholder="First Name"
                 required>
             <input type="text" name="middleName" class="profileNotRequired" ng-model="ctrl.user.profile.middleName" placeholder="Middle Name">
             <input type="text" name="lastName" class="profileRequired" ng-model="ctrl.user.profile.lastName" placeholder="Last Name"
                 required>
             <input type="date" name="dateOfBirth" class="profileNotRequired" ng-model="ctrl.user.dateOfBirth" placeholder="Date of birth">
-        </ng-form>
 
+        </ng-form>
+        
+        <br/>
+        inserisci il tuo indirizzo:
+        <textarea ng-model="ctrl.user.address"></textarea>
+        
+        <br/>
+        accetti il consenso bla bla bla?
+        <input type="checkbox" ng-model="ctrl.user.agree" ng-true-value="YES" ng-false-value="NO">
+
+        <br/>
         <span ng-show="myForm.profile.$invalid">
             Please fill out the profile information
         </span>
-        <input type="submit" value="Submit" ng-disabled="myForm.$invalid" />
+        <input type="submit" value="Submit" ng-disabled="myForm.$invalid"/>
     </form>
 
     <!--  AngularJS  -->
